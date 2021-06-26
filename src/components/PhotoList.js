@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {ScrollView, Text, View, FlatList} from 'react-native';
 import axios from 'axios';
 import PhotoDetail from './PhotoDetail';
+import {Button as ButtonPaper} from 'react-native-paper'
 
 const PhotoList = (props) => {
   const [photos, setPhotos] = useState(null);
@@ -28,8 +29,8 @@ const PhotoList = (props) => {
 
   if (!photos) {
     return (
-      <View style={{flex: 1}}>
-        <Text>Loading...</Text>
+      <View style={{flex: 1, marginTop: 10, justifyContent: 'center'}}>
+        <ButtonPaper loading={true} mode="text" style={{fontSize: 16}} color='#7C8C03'>Cargando...</ButtonPaper>
       </View>
     );
   }

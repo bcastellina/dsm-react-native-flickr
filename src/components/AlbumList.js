@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {ScrollView, Text, View, FlatList} from 'react-native';
 import axios from 'axios';
 import AlbumDetail from './AlbumDetail';
+import {Button as ButtonPaper} from 'react-native-paper'
 
 const AlbumList = (props) => {
   const [photoset, setPhotoset] = useState(null);
@@ -30,7 +31,11 @@ const AlbumList = (props) => {
   console.log(photoset);
 
   if (!photoset) {
-    return <Text>Loading...</Text>;
+    return (
+      <View style={{flex: 1, marginTop: 10, justifyContent: 'center'}}>
+        <ButtonPaper loading={true} mode="text" style={{fontSize: 16}} color='#7C8C03'>Cargando...</ButtonPaper>
+      </View>
+    );
   }
 
   return (

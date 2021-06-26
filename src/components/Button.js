@@ -1,34 +1,29 @@
 import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
+import {Button as ButtonPaper} from 'react-native-paper';
 
 const Button = ({ onPress, children }) => {
   const { buttonStyle, textStyle } = styles;
 
+
   return (
-    <TouchableOpacity onPress={onPress} style={buttonStyle}>
-      <Text style={textStyle}>
-        {children}
-      </Text>
-    </TouchableOpacity>
+    <ButtonPaper onPress={onPress} {...buttonStyle}><Text style={textStyle}>{children}</Text></ButtonPaper>
   );
 };
 
 const styles = {
   textStyle: {
-    alignSelf: 'center',
-    color: '#000',
-    fontSize: 16,
-    fontWeight: '600',
-    paddingTop: 10,
-    paddingBottom: 10
+    color: "white"
   },
   buttonStyle: {
-    flex: 1,
-    alignSelf: 'stretch',
-    backgroundColor: '#87ceeb',
-    borderRadius: 5,
-    marginLeft: 5,
-    marginRight: 5,
+    mode: "contained",
+    style: {
+      flex: 1,
+      alignSelf: 'stretch',
+      marginLeft: 5,
+      marginRight: 5
+    },
+    color: "#7C8C03"
   }
 };
 
